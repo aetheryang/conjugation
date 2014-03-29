@@ -1,0 +1,83 @@
+class Phrase
+    def self.num
+        @@num
+    end
+    def self.num=(num)
+        @@num=num
+    end
+    def wnum
+        @wnum
+    end
+    def chinese
+        @chinese
+    end
+    def other
+        @other
+    end
+
+    def initialize(other,chinese,wnum=@@num,right=0,wrong=0)
+        @wnum=wnum
+        @other=other.click
+        @chinese=chinese
+        @right=right
+        @wrong=wrong
+        @@num+=1
+    end
+    def change(other,chinese)
+        @other=other.click
+        @chinese=chinese
+        @right=0
+        @wrong=0
+    end
+    def read(ans)
+        if ans==1
+            @right+=1
+        else
+            @wrong+=1
+        end
+        all+=1
+    end
+    def fwrite(file)
+        cut="&"
+        str=@wnum.to_s+cut+@chinese+cut+@other+cut+@right.to_s+cut+@wrong.to_s+"\n"
+        file.write(str)
+    end
+    def show
+        puts "num         :\t#{@wnum}"
+        puts "Chinese   is:\t#{@chinese}"
+        puts "Other     is:\t#{@other}"
+        puts "right num is:\t#{@right.to_s}"
+        puts "wrong num is:\t#{@wrong.to_s}"
+    end
+end
+class Array
+    def click
+        while letter=self.index("\\")
+            if self[letter+1]=="a"
+                self.delete_at(letter)
+                self[letter+1]="ä"
+            else if self[letter+1]=="A"
+                self.delete_at(letter)
+                self[letter+1]="Ä"
+            else if self[letter+1]=="o"
+                self.delete_at(letter)
+                self[letter+1]="ö"
+            else if self[letter+1]=="O"
+                self.delete_at(letter)
+                self[letter+1]="Ö"
+            else if self[letter+1]=="u"
+                self.delete_at(letter)
+                self[letter+1]="ü"
+            else if self[letter+1]=="U"
+                self.delete_at(letter)
+                self[letter+1]="Ü"
+            else if self[letter+1]=="s"||self[letter+1]=="S"
+                self.delete_at(letter)
+                self[letter+1]="ß"
+            else puts"wrongword!"
+                return 0
+            end
+        end
+        end
+        return 1
+    end

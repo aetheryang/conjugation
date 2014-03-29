@@ -43,7 +43,7 @@ class Phrase
         file.write(str)
     end
     def show_all
-        str="#{@num}\t\t#@pharse\t\t#@means\n"
+        str="#{@wnum}\t\t#@phrase\t\t#@means\n"
     end
     def show
         cut="\t"

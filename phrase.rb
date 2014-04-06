@@ -27,30 +27,46 @@ class Phrase
         @right=str[8].to_i
         @wrong=str[9].to_i
         @@num += 1
+        @time=str[10]
 	end
-    def read (ans)
-        if ans	== 1
-            @right += 1
+
+    def value (time)
+        wrong=Math.sqrt(@wrong)+4
+        bal=right-wrong
+        if bal>0
+           return 100 
         else
-	        @wrong += 1
-		end
-		all += 1
-	end
+            different=time-@time
+            dif=abs(different.to_i/1000)
+            return dif/(1-bal)
+        end
+    end
+
+    def look(re)
+        if re==1
+            @right+=1
+        else
+            @wrong+=1
+        end
+        @time=Time.now
+    end
 	def fwrite (file)
 		cut = "&"
         appendix=@speech+cut+@appendix1+cut+@appendix2+cut+@appendix3+cut+@means+cut+@remark
-        str =@wnum.to_s+cut+@phrase+cut+appendix+cut+@right.to_s+cut+@wrong.to_s+"\n"
+        str =@wnum.to_s+cut+@phrase+cut+appendix+cut+@right.to_s+cut+@wrong.to_s+cut+@time.to_s+"\n"
         file.write(str)
     end
     def show_all
-        str="#{@wnum}\t\t#@phrase\t\t#@means\n"
+        cut="\t"
+        appendix=cut+cut+@speech+cut+cut+@appendix1+cut+cut+@appendix2+cut+cut+@appendix3+cut+cut+@means
+        str="#@phrase#{appendix}\n"
     end
     def show
         cut="\t"
         str="num\tphrase\t\tspeech\tapp1\tapp2\tapp3\tmeans\t\tremark\tright\twrong"
         puts str
         appendix=@speech+cut+@appendix1+cut+@appendix2+cut+@appendix3+cut+@means+cut+cut+@remark
-        str =@wnum.to_s+cut+@phrase+cut++cut+appendix+cut+@right.to_s+"\t"+@wrong.to_s+"\n"
+        str =@wnum.to_s+cut+@phrase+cut+cut+appendix+cut+@right.to_s+cut+@wrong.to_s+"\n"
         puts str
     end
 end

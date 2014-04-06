@@ -50,6 +50,7 @@ class Control
                     word.fwrite(file)
                 end
             end
+            puts "okey~bye!"
             exit
         when "1"
             word_new
@@ -73,6 +74,8 @@ class Control
         continue?
         when "7"
             show_all
+        when "8"
+            lookback
         end
     end
 
@@ -101,7 +104,8 @@ class Control
         remark=gets.chomp
         str<<remark
         str<<0
-        str<<0
+        str<<1
+        str<<Time.now
         word=Phrase.new(str)
         @@all_word<<word
         if word!=nil
@@ -113,7 +117,7 @@ class Control
     end
     def show_all
         clear
-        puts "num\t\tpharse\t\tmeans\t\t"
+        puts "phrase\t\tspeech\t\tappendix1\t\tappendix2\t\tappendix3\t\tmeans"
         @@all_word.each do |x|
             puts x.show_all
         end
@@ -129,5 +133,30 @@ class Control
             end
         end
         puts "There is no word by num #{num}"
+    end
+    def get
+        time=Time.now
+        @@all_word.find do |word|
+            word.value(time)<50
+        end
+    end
+    def lookback
+        loop do
+            word=get()
+            puts word.phrase
+            puts "Know?"
+            c=gets.chomp
+            if c=="y" ||c==""
+                re=1
+            else
+                re=0
+            end
+            word.look(re)
+            c.show_all
+            c=continue?.chomp
+            if c=="q"||c=="n"
+                break
+            end
+        end
     end
 end

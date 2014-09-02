@@ -47,8 +47,7 @@ class Control
     puts "2. Delete a word"
     puts "3. Show all"
     puts "4. Show by num"
-    puts "5. Show word by word"
-    puts "6. Look back a word"
+    puts "5. Look back words"
   end
 
   def make_chose
@@ -58,13 +57,16 @@ class Control
     when "1"
       word_new
     when "2"
-      word_del
+      puts 'Please input the num of the word to delete!'
+      num = gets.chomp.to_i
+      word_delete(num)
     when "3"
       show_all
     when "4"
       puts 'Please input the num of the word'
       show_by_num(gets.chomp.to_i)
     when "5"
+      look_back
     end
   end
 
@@ -83,9 +85,7 @@ class Control
     @@all_word << new_word
   end
 
-  def word_del
-    puts 'Please input the num of the word to delete!'
-    num = gets.chomp.to_i
+  def word_delete(num)
     if @@all_word[num]
       puts "going to delete the blew word, are you sure? (y/n)"
       puts num.to_s + "\t" + @@all_word[num]
@@ -117,34 +117,20 @@ class Control
     else
       puts "There is no word by num #{num}"
     end
-    continue?
-  end
-# TODO
-  def get_time
-    time=Time.now
-    @@all_word.find do |word|
-        word.value(time)<50
-    end
   end
 
-  def lookback
-    loop do
-      word=get()
-      puts word.phrase
-      puts "Know?"
-      c=gets.chomp
-      if c=="y" ||c==""
-        re=1
-      else
-        re=0
-      end
-      word.look(re)
-      c.show_all
-      c=continue?.chomp
-      if c=="q"||c=="n"
-        break
+  def look_back
+    1.upto(@@all_word.size) do |num|
+      clear
+      show_by_num(num)
+      answer = gets.chomp
+      case answer
+      when "delete" then 
+        word_delete(num)
+      when "q", "Q", "exit", "quit" then break
       end
     end
+    continue?
   end
 end
 

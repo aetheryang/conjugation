@@ -46,11 +46,12 @@ class Control
   def chose_list
     clear
     puts "0. Quit"
-    puts "1. Write in a new world"
-    puts "2. Delete a world"
+    puts "1. Write in a new word"
+    puts "2. Delete a word"
     puts "3. Show all"
     puts "4. Show by num"
-    puts "5. Look back a word"
+    puts "5. Show word by word"
+    puts "6. Look back a word"
   end
 
   def make_chose
@@ -60,6 +61,7 @@ class Control
     when "1"
       word_new
     when "2"
+      word_del
     when "3"
       show_all
     when "4"
@@ -81,6 +83,24 @@ class Control
     puts 'Please input the new word'
     new_word = gets.chomp.convert_german!
     @@all_word << new_word
+  end
+
+  def word_del
+    puts 'Please input the num of the word to delete!'
+    num = gets.chomp.to_i
+    if @@all_word[num]
+      puts "going to delete the blew word, are you sure? (y/n)"
+      puts num.to_s + "\t" + @@all_word[num]
+      if ['y', 'Y'].include?(gets.chomp)
+        @@all_word.delete_at(num)
+        puts 'Done!'
+      else
+        puts 'never mind'
+      end
+    else
+      puts "There is no word by num #{num}"
+    end
+    continue?
   end
 # TODO delete
   def show_all

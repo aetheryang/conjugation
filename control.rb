@@ -10,9 +10,6 @@ class Control
   end
 
   def initialize()
-    # TODO so ,change the counter from 0 to 1
-    # title = 'num' + "\t" + 'word'
-    # @@all_word << title
     @@all_word = []
     get_filename
     readfile
@@ -21,9 +18,9 @@ class Control
   def get_filename
     pwd = `pwd`.split("/")
     # two way of file 
-    # FIXME need to mkdir .reciteword first
+    # OPTIMIZE need to mkdir .reciteword first
     @filename = "/" + pwd[1] + "/" + pwd[2] + "/.reciteword/wordlist.txt"
-    # FIXME if a packed program del the next line
+    # OPTIMIZE if a packed program del the next line
     @filename = "wordlist.txt"
   end
 
@@ -65,7 +62,8 @@ class Control
     when "3"
       show_all
     when "4"
-      show_by_num
+      puts 'Please input the num of the word'
+      show_by_num(gets.chomp.to_i)
     when "5"
     end
   end
@@ -102,7 +100,7 @@ class Control
     end
     continue?
   end
-# TODO delete
+
   def show_all
     clear
     counter=0
@@ -112,10 +110,8 @@ class Control
     end
     continue?
   end
-# TODO
-  def show_by_num
-    puts 'Please input the num of the word'
-    num = gets.chomp.to_i
+
+  def show_by_num(num)
     if @@all_word[num]
       puts num.to_s + "\t" + @@all_word[num]
     else

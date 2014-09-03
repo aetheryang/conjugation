@@ -6,7 +6,7 @@ class Control
   end
 
   def clear
-    puts "\n" * 30
+    30.times{ puts "\n" }
   end
 
   def initialize()

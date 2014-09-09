@@ -9,9 +9,9 @@ class Verben  # verbs
     indikativ_praeteritum,
     zweites_partizip
 
-  def show
+  def to_s
     tab = "\t"
-    puts @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum
+    @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum
   end
 
   def equal?(verben)  # maby just use eql?

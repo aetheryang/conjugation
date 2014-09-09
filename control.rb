@@ -94,8 +94,8 @@ class Control
 
   def word_delete(num)
     if @@all_word[num]
-      puts "going to delete the blew word, are you sure? (y/n)"
-      puts num.to_s + "\t" + @@all_word[num]
+      puts "going to delete the blow word, are you sure? (y/n)"
+      puts num.to_s + "\t" + @@all_word[num].to_s   # OPTIMIZE maybe .to_s is not need
       if ['y', 'Y'].include?(gets.chomp)
         @@all_word.delete_at(num)
         puts 'Done!'
@@ -111,8 +111,8 @@ class Control
   def show_all
     clear
     counter=0
-    @@all_word.each do |word|
-      puts counter.to_s + "\t" + word
+    @@all_word.each do |verben|
+      puts counter.to_s + "\t" + verben.to_s
       counter += 1
     end
     continue?
@@ -120,7 +120,7 @@ class Control
 
   def show_by_num(num)
     if @@all_word[num]
-      puts num.to_s + "\t" + @@all_word[num]
+      puts num.to_s + "\t" + @@all_word[num].to_s
     else
       puts "There is no word by num #{num}"
     end

@@ -7,7 +7,10 @@ class Verben  # verbs
     infintiv,
     indikativ_praesens_du,
     indikativ_praeteritum,
-    zweites_partizip
+    zweites_partizip,
+    time,
+    right,
+    wrong
 
   def to_s
     tab = "\t"

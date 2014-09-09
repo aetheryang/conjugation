@@ -1,5 +1,4 @@
 class Control 
-
   def continue?
     puts "continue?"
     gets
@@ -55,7 +54,7 @@ class Control
     when "0"
       exit!
     when "1"
-      word_new
+      @@all_word << word_new
     when "2"
       puts 'Please input the num of the word to delete!'
       num = gets.chomp.to_i
@@ -89,7 +88,7 @@ class Control
     verben.indikativ_praeteritum = gets.chomp.convert_german!
     puts 'Please input the Zweites Partizip of the word'
     verben.zweites_partizip = gets.chomp.convert_german!
-    @@all_word << new_word
+    verben
   end
 
   def word_delete(num)
@@ -121,17 +120,27 @@ class Control
   def show_by_num(num)
     if @@all_word[num]
       puts num.to_s + "\t" + @@all_word[num].to_s
+      @@all_word
     else
       puts "There is no word by num #{num}"
+      nil
     end
   end
 
   def look_back
     1.upto(@@all_word.size) do |num|
       clear
-      show_by_num(num)
+      verben = show_by_num(num)
       answer = gets.chomp
-      case answer
+      if answer eql? verben
+        puts "right"
+        verben.right += 1
+      else
+        puts "wrong"
+        verben.wrong += 1
+      end
+      next = continue?.chomp    # FIXME dont know weather ok
+      case next
       when "delete" then 
         word_delete(num)
       when "q", "Q", "exit", "quit" then break
@@ -139,6 +148,5 @@ class Control
     end
     continue?
   end
-
 end
 

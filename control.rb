@@ -47,7 +47,7 @@ class Control
     puts "2. Delete a word"
     puts "3. Show all"
     puts "4. Show by num"
-    puts "5. Look back words"
+    puts "5. Test"
   end
 
   def make_chose
@@ -80,8 +80,15 @@ class Control
   end
 
   def word_new
-    puts 'Please input the new word'
-    new_word = gets.chomp.convert_german!
+    verben = Verben.new
+    puts 'Please input the Infintiv of the word'
+    verben.infintiv = gets.chomp.convert_german!
+    puts 'Please input the Indikativ Präsens_du of the word'
+    verben.indikativ_praesens_du = gets.chomp.convert_german!
+    puts 'Please input the Indikativ Präteritum of the word'
+    verben.indikativ_praeteritum = gets.chomp.convert_german!
+    puts 'Please input the Zweites Partizip of the word'
+    verben.zweites_partizip = gets.chomp.convert_german!
     @@all_word << new_word
   end
 

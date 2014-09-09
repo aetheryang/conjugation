@@ -132,5 +132,6 @@ class Control
     end
     continue?
   end
+
 end
 

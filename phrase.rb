@@ -17,6 +17,11 @@ class Verben  # verbs
     @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum
   end
 
+  def out
+    cut = "&"
+    @infintiv + cut + @indikativ_praesens_du + cut + @indikativ_praeteritum + cut + @right.to_s + cut + @wrong.to_s
+  end
+
   def equal?(verben)  # maby just use eql?
     if verben.class == Verben
       if

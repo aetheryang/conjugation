@@ -54,7 +54,11 @@ class Control
     when "0"
       exit!
     when "1"
-      @@all_word << word_new
+      verben = Verben.new
+      puts 'Please input the Infintiv of the word'
+      verben.infintiv = gets.chomp.convert_german!
+      word_change!(verben)
+      @@all_word << verben
     when "2"
       puts 'Please input the num of the word to delete!'
       num = gets.chomp.to_i
@@ -71,17 +75,14 @@ class Control
 
   def exit!
     File.open(@filename,"wt+") do |file|
-      @@all_word.each { |word| file.puts word }
+      @@all_word.each { |verben| file.puts verben.to_s }
     end
     puts "okey~bye!"
     `rm #@filename~`
     exit
   end
 
-  def word_new
-    verben = Verben.new
-    puts 'Please input the Infintiv of the word'
-    verben.infintiv = gets.chomp.convert_german!
+  def word_change!(verben)
     puts 'Please input the Indikativ Präsens_du of the word'
     verben.indikativ_praesens_du = gets.chomp.convert_german!
     puts 'Please input the Indikativ Präteritum of the word'
@@ -131,7 +132,9 @@ class Control
     1.upto(@@all_word.size) do |num|
       clear
       verben = show_by_num(num)
-      answer = gets.chomp
+      answer = Verben.new
+      answer.@infintiv = verben.@infintiv
+      word_change(answer)
       if answer eql? verben
         puts "right"
         verben.right += 1

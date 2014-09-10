@@ -80,16 +80,6 @@ class Control
     exit
   end
 
-  def word_change!(verben)
-    puts 'Please input the Indikativ Präsens_du of the word'
-    verben.indikativ_praesens_du = gets.chomp.convert_german!
-    puts 'Please input the Indikativ Präteritum of the word'
-    verben.indikativ_praeteritum = gets.chomp.convert_german!
-    puts 'Please input the Zweites Partizip of the word'
-    verben.zweites_partizip = gets.chomp.convert_german!
-    verben
-  end
-
   def word_delete(num)
     if @@all_word[num]
       puts "going to delete the blow word, are you sure? (y/n)"
@@ -119,7 +109,7 @@ class Control
   def show_by_num(num)
     if @@all_word[num]
       puts num.to_s + "\t" + @@all_word[num].to_s
-      @@all_word
+      @@all_word[num]
     else
       puts "There is no word by num #{num}"
       nil
@@ -131,13 +121,13 @@ class Control
       clear
       verben = show_by_num(num)
       answer = verben.clone
-      word_change(answer)
-      if answer eql? verben
+      answer.word_change!
+      if answer.eql?(verben)
         puts "right"
-        verben.right += 1
+        verben.right
       else
         puts "wrong"
-        verben.wrong += 1
+        verben.wrong
       end
       next_chose = continue?.chomp    # FIXME dont know weather ok
       case next_chose

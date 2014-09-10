@@ -29,10 +29,28 @@ class Verben  # verbs
     @indikativ_praesens_du = verben_s[1]
     @indikativ_praeteritum = verben_s[2]
     @zweites_partizip = verben_s[3]
-    @right = verben_s[4]
-    @wrong = verben_s[5]
+    @right = verben_s[4].to_i
+    @wrong = verben_s[5].to_i
     @time = verben_s[6]
     self
+  end
+
+  def word_change!
+    puts 'Please input the Indikativ Präsens_du of the word'
+    @indikativ_praesens_du = gets.chomp.convert_german!
+    puts 'Please input the Indikativ Präteritum of the word'
+    @indikativ_praeteritum = gets.chomp.convert_german!
+    puts 'Please input the Zweites Partizip of the word'
+    @zweites_partizip = gets.chomp.convert_german!
+    self
+  end
+
+  def right
+    @right += 1
+  end
+
+  def wrong
+    @wrong += 1
   end
 end
 

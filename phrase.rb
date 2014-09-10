@@ -5,20 +5,26 @@ class Verben  # verbs
 
   attr_accessor :infintiv, :indikativ_praesens_du, :indikativ_praeteritum, :zweites_partizip, :right, :wrong, :time
 
+  def init_data
+    @right = 0
+    @wrong = 1
+    @time = Time.now
+  end
+
   def to_s
     tab = "\t"
-    @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum
+    @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum + tab + @zweites_partizip
   end
 
   def out
     cut = "&"
-    @infintiv + cut + @indikativ_praesens_du + cut + @indikativ_praeteritum \
-      + cut + @right.to_s + cut + @wrong.to_s + cut + time
+    @infintiv + cut + @indikativ_praesens_du + cut + @indikativ_praeteritum + cut + @zweites_partizip \
+      + cut + @right.to_s + cut + @wrong.to_s + cut + @time.to_s
   end
 
   def get_from_s(str)
     verben_s = str.chomp.split("&")
-    verben = Verben.new
+    puts verben_s
     @infintiv = verben_s[0]
     @indikativ_praesens_du = verben_s[1]
     @indikativ_praeteritum = verben_s[2]
@@ -26,7 +32,7 @@ class Verben  # verbs
     @right = verben_s[4]
     @wrong = verben_s[5]
     @time = verben_s[6]
-    verben
+    self
   end
 end
 

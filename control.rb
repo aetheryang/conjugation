@@ -1,4 +1,5 @@
 class Control 
+
   def continue?
     puts "continue?"
     gets
@@ -10,17 +11,13 @@ class Control
 
   def initialize()
     @@all_word = []
-    get_filename
-    readfile
-  end
-
-  def get_filename
     pwd = `pwd`.split("/")
     # two way of file 
     # OPTIMIZE need to mkdir .reciteword first
     @filename = "/" + pwd[1] + "/" + pwd[2] + "/.reciteword/wordlist.txt"
     # OPTIMIZE if a packed program del the next line
     @filename = "wordlist.txt"
+    readfile
   end
 
   def readfile
@@ -58,6 +55,7 @@ class Control
       puts 'Please input the Infintiv of the word'
       verben.infintiv = gets.chomp.convert_german!
       word_change!(verben)
+      verben.init_data
       @@all_word << verben
     when "2"
       puts 'Please input the num of the word to delete!'
@@ -75,7 +73,7 @@ class Control
 
   def exit!
     File.open(@filename,"wt+") do |file|
-      @@all_word.each { |verben| file.puts verben.in }
+      @@all_word.each { |verben| file.puts verben.out }
     end
     puts "okey~bye!"
     `rm #@filename~`

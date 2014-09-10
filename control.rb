@@ -27,7 +27,7 @@ class Control
     if File.exist?(@filename)
       `cp #@filename #@filename~`
       File.open(@filename) do |file|
-        file.each_line { |line| @@all_word << line.chomp }
+        file.each_line { |line| @@all_word << line.chomp.to_verben }
       end
     else
         puts @filename + "doesn't exist!"
@@ -75,7 +75,7 @@ class Control
 
   def exit!
     File.open(@filename,"wt+") do |file|
-      @@all_word.each { |verben| file.puts verben.to_s }
+      @@all_word.each { |verben| file.puts verben.in }
     end
     puts "okey~bye!"
     `rm #@filename~`
@@ -132,8 +132,7 @@ class Control
     1.upto(@@all_word.size) do |num|
       clear
       verben = show_by_num(num)
-      answer = Verben.new
-      answer.@infintiv = verben.@infintiv
+      answer = verben.clone
       word_change(answer)
       if answer eql? verben
         puts "right"
@@ -142,8 +141,8 @@ class Control
         puts "wrong"
         verben.wrong += 1
       end
-      next = continue?.chomp    # FIXME dont know weather ok
-      case next
+      next_chose = continue?.chomp    # FIXME dont know weather ok
+      case next_chose
       when "delete" then 
         word_delete(num)
       when "q", "Q", "exit", "quit" then break

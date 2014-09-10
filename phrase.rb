@@ -3,14 +3,7 @@
 
 class Verben  # verbs
 
-  attr_writer:
-    infintiv,
-    indikativ_praesens_du,
-    indikativ_praeteritum,
-    zweites_partizip,
-    time,
-    right,
-    wrong
+  attr_accessor :infintiv, :indikativ_praesens_du, :indikativ_praeteritum, :zweites_partizip, :time, :right, :wrong
 
   def to_s
     tab = "\t"
@@ -19,23 +12,8 @@ class Verben  # verbs
 
   def out
     cut = "&"
-    @infintiv + cut + @indikativ_praesens_du + cut + @indikativ_praeteritum + cut + @right.to_s + cut + @wrong.to_s
-  end
-
-  def equal?(verben)  # maby just use eql?
-    if verben.class == Verben
-      if
-        verben.@infintiv == self.@infintiv ||
-        verben.@indikativ_praesens_du == self.@indikativ_praesens_du ||
-        verben.@indikativ_praeteritum == self.@indikativ_praeteritum
-      then
-        true
-      else
-        nil
-      end
-    else
-      nil
-    end
+    @infintiv + cut + @indikativ_praesens_du + cut + @indikativ_praeteritum \
+      + cut + @right.to_s + cut + @wrong.to_s + cut + time
   end
 
 end
@@ -59,6 +37,19 @@ class String
         end
       end
       return self
+  end
+
+  def to_verben
+    verben_s = self.split("&")
+    verben = Verben.new
+    verben.@infintiv = verben_s[0]
+    verben.@indikativ_praesens_du = verben_s[1]
+    verben.@indikativ_praeteritum = verben_s[2]
+    verben.@zweites_partizip = verben_s[3]
+    verben.@right = verben_s[4]
+    verben.@wrong = verben_s[5]
+    verben.@time = verben_s[6]
+    verben
   end
 
 end

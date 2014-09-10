@@ -3,7 +3,7 @@
 
 class Verben  # verbs
 
-  attr_accessor :infintiv, :indikativ_praesens_du, :indikativ_praeteritum, :zweites_partizip, :time, :right, :wrong
+  attr_accessor :infintiv, :indikativ_praesens_du, :indikativ_praeteritum, :zweites_partizip, :right, :wrong, :time
 
   def to_s
     tab = "\t"
@@ -16,6 +16,18 @@ class Verben  # verbs
       + cut + @right.to_s + cut + @wrong.to_s + cut + time
   end
 
+  def get_from_s(str)
+    verben_s = str.chomp.split("&")
+    verben = Verben.new
+    @infintiv = verben_s[0]
+    @indikativ_praesens_du = verben_s[1]
+    @indikativ_praeteritum = verben_s[2]
+    @zweites_partizip = verben_s[3]
+    @right = verben_s[4]
+    @wrong = verben_s[5]
+    @time = verben_s[6]
+    verben
+  end
 end
 
 
@@ -37,19 +49,6 @@ class String
         end
       end
       return self
-  end
-
-  def to_verben
-    verben_s = self.split("&")
-    verben = Verben.new
-    verben.@infintiv = verben_s[0]
-    verben.@indikativ_praesens_du = verben_s[1]
-    verben.@indikativ_praeteritum = verben_s[2]
-    verben.@zweites_partizip = verben_s[3]
-    verben.@right = verben_s[4]
-    verben.@wrong = verben_s[5]
-    verben.@time = verben_s[6]
-    verben
   end
 
 end

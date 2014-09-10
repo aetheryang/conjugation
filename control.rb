@@ -27,7 +27,7 @@ class Control
     if File.exist?(@filename)
       `cp #@filename #@filename~`
       File.open(@filename) do |file|
-        file.each_line { |line| @@all_word << line.chomp.to_verben }
+        file.each_line { |line| @@all_word << Verben.new.get_from_s(line) }
       end
     else
         puts @filename + "doesn't exist!"

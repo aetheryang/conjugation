@@ -127,7 +127,7 @@ class Control
   end
 
   def look_back
-    1.upto(@@all_word.size) do |num|
+    0.upto(@@all_word.size) do |num|
       clear
       verben = show_by_num(num)
       answer = verben.clone

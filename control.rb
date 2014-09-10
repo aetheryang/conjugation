@@ -120,13 +120,18 @@ class Control
     0.upto(@@all_word.size) do |num|
       clear
       verben = show_by_num(num)
+      if verben == nil
+        break
+      end
       answer = verben.clone
       answer.word_change!
-      if answer.eql?(verben)
+      if answer.eql?(verben)    # FIXME does not work
         puts "right"
         verben.right
       else
-        puts "wrong"
+        puts "Wrong!"
+        puts "Right is :#{verben.to_s}"
+        puts "Your  is :#{answer.to_s}"
         verben.wrong
       end
       next_chose = continue?.chomp    # FIXME dont know weather ok

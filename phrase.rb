@@ -43,6 +43,10 @@ class Verben  # verbs
     self
   end
 
+  def infintiv
+    @infintiv
+  end
+
   def indikativ_praesens_du
     @indikativ_praesens_du
   end
@@ -85,5 +89,28 @@ class String
       return self
   end
 
+  def grey
+    "\e[37m" + self
+  end
+
+  def light_blue
+    "\e[36" + self
+  end
+
+  def red
+    "\e[31m" + self
+  end
+  
+  def black
+    "\e[30m" + self
+  end
+
+  def green
+    "\e[32m" + self
+  end
+
+  def blue
+    "\e[34m" + self
+  end
 end
 

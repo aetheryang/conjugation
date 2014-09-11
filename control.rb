@@ -48,25 +48,26 @@ class Control
 
   def make_chose
     case gets.chomp
-    when "0"
+    when "0"  # exit
       exit!
-    when "1"
+    when "1"  # new
       verben = Verben.new
       puts 'Please input the Infintiv of the word'
       verben.infintiv = gets.chomp.convert_german!
       word_change!(verben)
       verben.init_data
       @@all_word << verben
-    when "2"
+    when "2"  # delete
       puts 'Please input the num of the word to delete!'
       num = gets.chomp.to_i
       word_delete(num)
-    when "3"
+    when "3"  # show all
       show_all
-    when "4"
+    when "4"  # show by num
       puts 'Please input the num of the word'
-      show_by_num(gets.chomp.to_i)
-    when "5"
+      search_by_num(gets.chomp.to_i)
+      puts num.to_s + "\t" + @@all_word[num].to_s
+    when "5"  # look back
       look_back
     end
   end
@@ -106,9 +107,8 @@ class Control
     continue?
   end
 
-  def show_by_num(num)
+  def search_by_num(num)
     if @@all_word[num]
-      puts num.to_s + "\t" + @@all_word[num].to_s
       @@all_word[num]
     else
       puts "There is no word by num #{num}"
@@ -119,23 +119,37 @@ class Control
   def look_back
     0.upto(@@all_word.size) do |num|
       clear
-      verben = show_by_num(num)
+      verben = search_by_num(num)
       if verben == nil
         break
       end
+      puts verben.infintiv.blue
       answer = verben.clone
       answer.word_change!
-      if answer.eql?(verben)    # FIXME does not work. You need to rewrite the method of equal
-        puts "right"
+      puts verben.to_s.blue
+      out_put = verben.infintiv.blue
+      if answer.indikativ_praesens_du == verben.indikativ_praesens_du
+        out_put += "\t" + answer.indikativ_praesens_du.green
         verben.right
       else
-        puts "Wrong!"
-        puts "Right is :#{verben.to_s}"
-        puts verben.out
-        puts "Your  is :#{answer.to_s}"
-        puts answer.out
+        out_put += "\t" + answer.indikativ_praesens_du.red
         verben.wrong
       end
+      if answer.indikativ_praeteritum == verben.indikativ_praeteritum
+        out_put += "\t" + answer.indikativ_praeteritum.green
+        verben.right
+      else
+        out_put += "\t" + answer.indikativ_praeteritum.red
+        verben.wrong
+      end
+      if answer.zweites_partizip == verben.zweites_partizip
+        out_put += "\t" + answer.zweites_partizip.green
+        verben.right
+      else
+        out_put += "\t" + answer.zweites_partizip.red
+        verben.wrong
+      end
+      puts out_put + "".grey
       next_chose = continue?.chomp    # FIXME dont know weather ok
       case next_chose
       when "delete" then 

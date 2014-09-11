@@ -125,13 +125,15 @@ class Control
       end
       answer = verben.clone
       answer.word_change!
-      if answer.eql?(verben)    # FIXME does not work
+      if answer.eql?(verben)    # FIXME does not work. You need to rewrite the method of equal
         puts "right"
         verben.right
       else
         puts "Wrong!"
         puts "Right is :#{verben.to_s}"
+        puts verben.out
         puts "Your  is :#{answer.to_s}"
+        puts answer.out
         verben.wrong
       end
       next_chose = continue?.chomp    # FIXME dont know weather ok

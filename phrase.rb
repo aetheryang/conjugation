@@ -3,8 +3,6 @@
 
 class Verben  # verbs
 
-  attr_accessor :infintiv, :indikativ_praesens_du, :indikativ_praeteritum, :zweites_partizip, :right, :wrong, :time
-
   def init_data
     @right = 0
     @wrong = 1
@@ -43,6 +41,18 @@ class Verben  # verbs
     puts 'Please input the Zweites Partizip of the word'
     @zweites_partizip = gets.chomp.convert_german!
     self
+  end
+
+  def indikativ_praesens_du
+    @indikativ_praesens_du
+  end
+
+  def indikativ_praeteritum
+    @indikativ_praeteritum
+  end
+
+  def zweites_partizip
+    @zweites_partizip
   end
 
   def right

@@ -1,7 +1,7 @@
 class Control 
 
   def continue?
-    puts "continue?"
+    puts "continue?".red + "".grey
     gets
   end
 
@@ -76,7 +76,7 @@ class Control
     File.open(@filename,"wt+") do |file|
       @@all_word.each { |verben| file.puts verben.out }
     end
-    puts "okey~bye!"
+    puts "okey~bye!".red
     `rm #@filename~`
     exit
   end
@@ -101,9 +101,15 @@ class Control
     clear
     counter=0
     @@all_word.each do |verben|
-      puts counter.to_s + "\t" + verben.to_s
-      counter += 1
+      out_put=counter.to_s + "\t" + verben.to_s
+      if counter % 2 == 1
+        puts out_put.green
+      else
+        puts  out_put.blue
+      end
+        counter += 1
     end
+    puts "".grey
     continue?
   end
 

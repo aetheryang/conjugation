@@ -54,7 +54,7 @@ class Control
       verben = Verben.new
       puts 'Please input the Infintiv of the word'
       verben.infintiv = gets.chomp.convert_german!
-      word_change!(verben)
+      verben.word_change!
       verben.init_data
       @@all_word << verben
     when "2"  # delete

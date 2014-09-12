@@ -47,6 +47,10 @@ class Verben  # verbs
     @infintiv
   end
 
+  def infintiv=(verben)
+    @infintiv = verben
+  end
+
   def indikativ_praesens_du
     @indikativ_praesens_du
   end

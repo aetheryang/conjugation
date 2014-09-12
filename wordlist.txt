@@ -1,1 +1,5 @@
 befehlen&befiehlst&befahlst&befohlen&9&16&2014-09-10 11:43:36 +0000
+beginnen&beginnst&begannst&begonnen&0&1&2014-09-12 10:31:48 +0000
+beißen&beißt&bissest&gebissen&0&1&2014-09-12 10:34:26 +0000
+bergen&birgst&bargst&geborgen&0&1&2014-09-12 10:35:02 +0000
+bersten&berstest&barstest&geborsten&0&1&2014-09-12 10:36:28 +0000

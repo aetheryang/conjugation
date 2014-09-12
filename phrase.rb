@@ -93,28 +93,36 @@ class String
       return self
   end
 
-  def grey
-    "\e[37m" + self
-  end
-
-  def light_blue
-    "\e[36" + self
+  def black
+    "\e[30m" + self
   end
 
   def red
     "\e[31m" + self
-  end
-  
-  def black
-    "\e[30m" + self
   end
 
   def green
     "\e[32m" + self
   end
 
+  def yellow
+    "\e[33m" + self
+  end
+
   def blue
     "\e[34m" + self
+  end
+
+  def purple
+    "\e[35m" + self
+  end
+
+  def light_blue
+    "\e[36" + self
+  end
+
+  def grey
+    "\e[37m" + self
   end
 end
 

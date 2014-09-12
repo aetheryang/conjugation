@@ -105,7 +105,7 @@ class Control
       if counter % 2 == 1
         puts out_put.green
       else
-        puts  out_put.blue
+        puts  out_put.yellow
       end
         counter += 1
     end

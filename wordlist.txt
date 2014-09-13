@@ -1,14 +1,14 @@
-befehlen&befiehlst&befahlst&befohlen&21&19&2014-09-13 16:27:25 +0000&下令
-beginnen&beginnst&begannst&begonnen&6&4&&开始
-beißen&beißt&bissest&gebissen&4&6&&咬
-bergen&birgst&bargst&geborgen&3&4&&营救
-bersten&berstest&barstest&geborsten&3&4&&爆裂
-bewegen&bewegst&bewogst&gewogen&2&5&&动员
-biegen&biegst&bogst&gebogen&3&4&&弄弯
-bieten&bietest&geboten&binden&1&6&&提供
-binden&bindest&bandest&gebunden&1&6&&绑
-bitten&bietest&batest&gebeten&0&1&2014-09-13 16:18:42 +0000&请求
-blasen&bläst&bliesest&geblasen&0&1&2014-09-13 16:19:38 +0000&吹
+befehlen&befiehlst&befahlst&befohlen&36&19&2014-09-13 17:13:23 +0000&下令
+beginnen&beginnst&begannst&begonnen&21&4&2014-09-13 17:13:31 +0000&开始
+beißen&beißt&bissest&gebissen&17&8&2014-09-13 17:13:52 +0000&咬
+bergen&birgst&bargst&geborgen&11&5&2014-09-13 17:14:08 +0000&营救
+bersten&berstest&barstest&geborsten&5&8&2014-09-13 17:14:08 +0000&爆裂
+bewegen&bewegst&bewogst&gewogen&6&7&2014-09-13 17:19:09 +0000&动员
+biegen&biegst&bogst&gebogen&8&5&2014-09-13 17:19:31 +0000&弄弯
+bieten&bietest&botest&geboten&5&8&2014-09-13 17:19:53 +0000&提供
+binden&bindest&bandest&gebunden&3&7&2014-09-13 17:19:53 +0000&绑
+bitten&bietest&batest&gebeten&0&4&2014-09-13 16:18:42 +0000&请求
+blasen&bläst&bliesest&geblasen&2&2&2014-09-13 16:19:38 +0000&吹
 bleiben&bleibst&bliebst&geblieben&0&1&2014-09-13 16:20:05 +0000&停留
 braten&brätst&brietest&gebraten&0&1&2014-09-13 16:22:30 +0000&煎炸
 brechen&brichst&brachst&gebrochen&0&1&2014-09-13 16:23:11 +0000&折断

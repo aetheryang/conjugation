@@ -123,41 +123,41 @@ class Control
       answer = verben.clone
       answer.word_change!
       puts verben.to_s.blue
-      out_put = verben.infintiv.blue
-      right_answer = verben.infintiv.blue
+      out_put = verben.infintiv.long_tab.blue
+      right_answer = verben.infintiv.long_tab.blue
       resault = 
         if answer.indikativ_praesens_du == verben.indikativ_praesens_du
-          out_put += "\t" + answer.indikativ_praesens_du.green
-          right_answer += "\t" + verben.indikativ_praesens_du.green
+          out_put += answer.indikativ_praesens_du.long_tab.green
+          right_answer += verben.indikativ_praesens_du.long_tab.green
           verben.right
           1
         else
-          out_put += "\t" + answer.indikativ_praesens_du.red
-          right_answer += "\t" + verben.indikativ_praesens_du.purple
+          out_put += answer.indikativ_praesens_du.long_tab.red
+          right_answer += verben.indikativ_praesens_du.long_tab.purple
           verben.wrong
           0
         end
       resault +=
         if answer.indikativ_praeteritum == verben.indikativ_praeteritum
-          out_put += "\t" + answer.indikativ_praeteritum.green
-          right_answer += "\t" + verben.indikativ_praeteritum.green
+          out_put += answer.indikativ_praeteritum.long_tab.green
+          right_answer += verben.indikativ_praeteritum.long_tab.green
           verben.right
           1
         else
-          out_put += "\t" + answer.indikativ_praeteritum.red
-          right_answer += "\t" + verben.indikativ_praeteritum.purple
+          out_put += answer.indikativ_praeteritum.long_tab.red
+          right_answer += verben.indikativ_praeteritum.long_tab.purple
           verben.wrong
           0
         end
       resault +=
         if answer.zweites_partizip == verben.zweites_partizip
-          out_put += "\t" + answer.zweites_partizip.green
-          right_answer += "\t" + verben.zweites_partizip.green
+          out_put += answer.zweites_partizip.green
+          right_answer += verben.zweites_partizip.green
           verben.right
           1
         else
-          out_put += "\t" + answer.zweites_partizip.red
-          right_answer += "\t" + verben.zweites_partizip.purple
+          out_put += answer.zweites_partizip.red
+          right_answer += verben.zweites_partizip.purple
           verben.wrong
           0
         end
@@ -171,7 +171,7 @@ class Control
       when "q", "Q", "exit", "quit" then break
       end
     end
-    @@all_word.sort_by { |verben| verben.counter }
+    @@all_word == @@all_word.sort_by { |verben| verben.counter }
   end
 end
 

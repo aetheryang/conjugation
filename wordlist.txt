@@ -1,4 +1,4 @@
-befehlen&befiehlst&befahlst&befohlen&18&19&&下令
+befehlen&befiehlst&befahlst&befohlen&21&19&2014-09-13 16:27:25 +0000&下令
 beginnen&beginnst&begannst&begonnen&6&4&&开始
 beißen&beißt&bissest&gebissen&4&6&&咬
 bergen&birgst&bargst&geborgen&3&4&&营救
@@ -7,3 +7,12 @@ bewegen&bewegst&bewogst&gewogen&2&5&&动员
 biegen&biegst&bogst&gebogen&3&4&&弄弯
 bieten&bietest&geboten&binden&1&6&&提供
 binden&bindest&bandest&gebunden&1&6&&绑
+bitten&bietest&batest&gebeten&0&1&2014-09-13 16:18:42 +0000&请求
+blasen&bläst&bliesest&geblasen&0&1&2014-09-13 16:19:38 +0000&吹
+bleiben&bleibst&bliebst&geblieben&0&1&2014-09-13 16:20:05 +0000&停留
+braten&brätst&brietest&gebraten&0&1&2014-09-13 16:22:30 +0000&煎炸
+brechen&brichst&brachst&gebrochen&0&1&2014-09-13 16:23:11 +0000&折断
+brennen&brennst&branntest&gebrannt&0&1&2014-09-13 16:23:46 +0000&燃烧
+bringen&bringst&brachtest&gebracht&0&1&2014-09-13 16:24:15 +0000&带来
+denken&denkst&dachtest&gedacht&0&1&2014-09-13 16:24:49 +0000&想，思考
+dreschen&drischst&droschst&gedroschen&0&1&2014-09-13 16:25:57 +0000&打谷

@@ -65,8 +65,9 @@ class Control
       show_all
     when "4"  # show by num
       puts 'Please input the num of the word'
-      search_by_num(gets.chomp.to_i)
-      puts num.to_s + "\t" + @@all_word[num].to_s
+      verben = search_by_num(gets.chomp.to_i)
+      puts num.to_s + "\t" + verben.to_s if verben
+      continue?
     when "5"  # look back
       look_back
     end
@@ -114,12 +115,7 @@ class Control
   end
 
   def search_by_num(num)
-    if @@all_word[num]
-      @@all_word[num]
-    else
-      puts "There is no word by num #{num}"
-      nil
-    end
+    @@all_word[num] or puts "There is no word by num" + "#{num}".yellow + "".grey
   end
 
   def look_back

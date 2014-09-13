@@ -16,7 +16,8 @@ class Verben  # verbs
   end
 
   def counter
-    @right * 50 + @wrong * (-60) + ((Time.now.to_i - @time.to_i) / 3_600 / 12) ** 2 * (-1)
+    day = 3_600 * 24
+    @right * 50 * day * day + @wrong * (-60) * day * day + (Time.now.to_i - @time.to_i) ** 2 * (-1)
   end
 
   def to_s

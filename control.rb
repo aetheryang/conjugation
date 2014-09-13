@@ -171,7 +171,7 @@ class Control
       when "q", "Q", "exit", "quit" then break
       end
     end
-    @@all_word == @@all_word.sort_by { |verben| verben.counter }
+    @@all_word.sort! { |verben1, verben2| verben1.counter - verben2.counter}
   end
 end
 

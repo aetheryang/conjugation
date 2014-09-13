@@ -1,9 +1,9 @@
-befehlen&befiehlst&befahlst&befohlen&15&19&2014-09-13 11:13:20 +0000
-beginnen&beginnst&begannst&begonnen&3&4&
-beißen&beißt&bissest&gebissen&1&6&
-bergen&birgst&bargst&geborgen&0&4&
-bersten&berstest&barstest&geborsten&0&4&
-bewegen&bewegst&bewogst&gewogen&0&4&
-biegen&biegst&bogst&gebogen&0&4&
-bieten&bietest&geboten&binden&0&4&
-binden&bindest&bandest&gebunden&0&4&
+befehlen&befiehlst&befahlst&befohlen&18&19&2014-09-13 11:15:43 +0000
+beginnen&beginnst&begannst&begonnen&6&4&2014-09-13 11:15:57 +0000
+beißen&beißt&bissest&gebissen&4&6&2014-09-13 11:16:18 +0000
+bergen&birgst&bargst&geborgen&3&4&2014-09-13 11:16:35 +0000
+bersten&berstest&barstest&geborsten&3&4&2014-09-13 11:16:55 +0000
+bewegen&bewegst&bewogst&gewogen&2&5&
+biegen&biegst&bogst&gebogen&3&4&2014-09-13 11:18:03 +0000
+bieten&bietest&geboten&binden&1&6&
+binden&bindest&bandest&gebunden&1&6&

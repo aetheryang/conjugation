@@ -6,7 +6,7 @@ class Control
   end
 
   def clear
-    30.times{ puts "\n" }
+    30.times { puts "\n" }
   end
 
   def initialize()
@@ -123,7 +123,7 @@ class Control
       clear
       verben = search_by_num(num)
       break if verben == nil
-      puts verben.infintiv.purple
+      puts verben.infintiv.purple + "".grey
       answer = verben.clone
       answer.word_change!
       puts verben.to_s.blue
@@ -175,6 +175,7 @@ class Control
       when "q", "Q", "exit", "quit" then break
       end
     end
+    @@all_word.sort_by { |verben| verben.counter }
   end
 end
 

@@ -3,7 +3,7 @@
 
 class Verben  # verbs
 
-  def init_data
+  def init_data!
     @right = 0
     @wrong = 1
     @time = Time.now
@@ -20,7 +20,7 @@ class Verben  # verbs
       + cut + @right.to_s + cut + @wrong.to_s + cut + @time.to_s
   end
 
-  def get_from_s(str)
+  def get_from_s!(str)
     verben_s = str.chomp.split("&")
     puts verben_s
     @infintiv = verben_s[0]
@@ -40,6 +40,7 @@ class Verben  # verbs
     @indikativ_praeteritum = gets.chomp.convert_german!
     puts 'Please input the Zweites Partizip of the word'
     @zweites_partizip = gets.chomp.convert_german!
+    @time = Time.now
     self
   end
 

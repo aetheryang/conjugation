@@ -24,7 +24,7 @@ class Control
     if File.exist?(@filename)
       `cp #@filename #@filename~`
       File.open(@filename) do |file|
-        file.each_line { |line| @@all_word << Verben.new.get_from_s(line) }
+        file.each_line { |line| @@all_word << Verben.new.get_from_s!(line) }
       end
     else
         puts @filename + "doesn't exist!"
@@ -55,7 +55,7 @@ class Control
       puts 'Please input the Infintiv of the word'
       verben.infintiv = gets.chomp.convert_german!
       verben.word_change!
-      verben.init_data
+      verben.init_data!
       @@all_word << verben
     when "2"  # delete
       puts 'Please input the num of the word to delete!'

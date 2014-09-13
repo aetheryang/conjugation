@@ -103,12 +103,8 @@ class Control
     counter=0
     @@all_word.each do |verben|
       out_put=counter.to_s + "\t" + verben.to_s
-      if counter % 2 == 1
-        puts out_put.green
-      else
-        puts  out_put.yellow
-      end
-        counter += 1
+      (counter % 2 == 1 ) ? ( puts out_put.green ) : ( puts out_put.yellow)
+      counter += 1
     end
     puts "".grey
     continue?

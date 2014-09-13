@@ -20,9 +20,8 @@ class Verben  # verbs
   end
 
   def to_s
-    tab = "\t"
-    @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum + tab + @zweites_partizip \
-      + tab + @chinese
+    @infintiv.long_tab + @indikativ_praesens_du.long_tab + @indikativ_praeteritum.long_tab\
+      + @zweites_partizip.long_tab + @chinese
   end
 
   def out
@@ -108,6 +107,10 @@ class String
         end
       end
       return self
+  end
+
+  def long_tab
+    (self.length < 8) ? self + "\t\t" : self + "\t" 
   end
 
   def black

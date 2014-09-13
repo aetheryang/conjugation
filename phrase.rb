@@ -9,6 +9,14 @@ class Verben  # verbs
     @time = Time.now
   end
 
+  def change_time!
+    @time = Time.now
+  end
+
+  def counter
+    @right * 50 + @wrong * (-50) + (Time.now - @time) ** 2 * (-1)
+  end
+
   def to_s
     tab = "\t"
     @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum + tab + @zweites_partizip
@@ -29,7 +37,6 @@ class Verben  # verbs
     @zweites_partizip = verben_s[3]
     @right = verben_s[4].to_i
     @wrong = verben_s[5].to_i
-    @time = verben_s[6]
     self
   end
 

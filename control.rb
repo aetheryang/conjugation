@@ -122,36 +122,52 @@ class Control
     0.upto(@@all_word.size) do |num|
       clear
       verben = search_by_num(num)
-      if verben == nil
-        break
-      end
-      puts verben.infintiv.blue
+      break if verben == nil
+      puts verben.infintiv.purple
       answer = verben.clone
       answer.word_change!
       puts verben.to_s.blue
       out_put = verben.infintiv.blue
-      if answer.indikativ_praesens_du == verben.indikativ_praesens_du
-        out_put += "\t" + answer.indikativ_praesens_du.green
-        verben.right
-      else
-        out_put += "\t" + answer.indikativ_praesens_du.red
-        verben.wrong
-      end
-      if answer.indikativ_praeteritum == verben.indikativ_praeteritum
-        out_put += "\t" + answer.indikativ_praeteritum.green
-        verben.right
-      else
-        out_put += "\t" + answer.indikativ_praeteritum.red
-        verben.wrong
-      end
-      if answer.zweites_partizip == verben.zweites_partizip
-        out_put += "\t" + answer.zweites_partizip.green
-        verben.right
-      else
-        out_put += "\t" + answer.zweites_partizip.red
-        verben.wrong
-      end
+      right_answer = verben.infintiv.blue
+      resault = 
+        if answer.indikativ_praesens_du == verben.indikativ_praesens_du
+          out_put += "\t" + answer.indikativ_praesens_du.green
+          right_answer += "\t" + verben.indikativ_praesens_du.green
+          verben.right
+          1
+        else
+          out_put += "\t" + answer.indikativ_praesens_du.red
+          right_answer += "\t" + verben.indikativ_praesens_du.purple
+          verben.wrong
+          0
+        end
+      resault +=
+        if answer.indikativ_praeteritum == verben.indikativ_praeteritum
+          out_put += "\t" + answer.indikativ_praeteritum.green
+          right_answer += "\t" + verben.indikativ_praeteritum.green
+          verben.right
+          1
+        else
+          out_put += "\t" + answer.indikativ_praeteritum.red
+          right_answer += "\t" + verben.indikativ_praeteritum.purple
+          verben.wrong
+          0
+        end
+      resault +=
+        if answer.zweites_partizip == verben.zweites_partizip
+          out_put += "\t" + answer.zweites_partizip.green
+          right_answer += "\t" + verben.zweites_partizip.green
+          verben.right
+          1
+        else
+          out_put += "\t" + answer.zweites_partizip.red
+          right_answer += "\t" + verben.zweites_partizip.purple
+          verben.wrong
+          0
+        end
       puts out_put + "".grey
+      puts right_answer + "".grey
+      verben.change_time! if resault == 3
       next_chose = continue?.chomp    # FIXME dont know weather ok
       case next_chose
       when "delete" then 
@@ -159,7 +175,6 @@ class Control
       when "q", "Q", "exit", "quit" then break
       end
     end
-    continue?
   end
 end
 

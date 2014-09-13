@@ -145,5 +145,37 @@ class String
   def grey
     "\e[37m" + self
   end
+
+  def black_bg
+    "\e[40m" + self
+  end
+
+  def red_bg
+    "\e[41m" + self
+  end
+
+  def green_bg
+    "\e[42m" + self
+  end
+
+  def yellow_bg
+    "\e[43m" + self
+  end
+
+  def blue_bg
+    "\e[44m" + self
+  end
+
+  def purple_bg
+    "\e[45m" + self
+  end
+
+  def light_blue_bg
+    "\e[46" + self
+  end
+
+  def grey_bg
+    "\e[47m" + self
+  end
 end
 

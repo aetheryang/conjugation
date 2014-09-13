@@ -1,9 +1,9 @@
-befehlen&befiehlst&befahlst&befohlen&18&19&2014-09-13 11:15:43 +0000
-beginnen&beginnst&begannst&begonnen&6&4&2014-09-13 11:15:57 +0000
-beißen&beißt&bissest&gebissen&4&6&2014-09-13 11:16:18 +0000
-bergen&birgst&bargst&geborgen&3&4&2014-09-13 11:16:35 +0000
-bersten&berstest&barstest&geborsten&3&4&2014-09-13 11:16:55 +0000
-bewegen&bewegst&bewogst&gewogen&2&5&
-biegen&biegst&bogst&gebogen&3&4&2014-09-13 11:18:03 +0000
-bieten&bietest&geboten&binden&1&6&
-binden&bindest&bandest&gebunden&1&6&
+befehlen&befiehlst&befahlst&befohlen&18&19&&下令
+beginnen&beginnst&begannst&begonnen&6&4&&开始
+beißen&beißt&bissest&gebissen&4&6&&咬
+bergen&birgst&bargst&geborgen&3&4&&营救
+bersten&berstest&barstest&geborsten&3&4&&爆裂
+bewegen&bewegst&bewogst&gewogen&2&5&&动员
+biegen&biegst&bogst&gebogen&3&4&&弄弯
+bieten&bietest&geboten&binden&1&6&&提供
+binden&bindest&bandest&gebunden&1&6&&绑

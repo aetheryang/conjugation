@@ -7,6 +7,8 @@ class Verben  # verbs
     @right = 0
     @wrong = 1
     @time = Time.now
+    puts "Please input the Chinese meaning"
+    @chinese = gets.chomp
   end
 
   def change_time!
@@ -19,13 +21,14 @@ class Verben  # verbs
 
   def to_s
     tab = "\t"
-    @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum + tab + @zweites_partizip
+    @infintiv + tab + @indikativ_praesens_du + tab + @indikativ_praeteritum + tab + @zweites_partizip \
+      + tab + @chinese
   end
 
   def out
     cut = "&"
     @infintiv + cut + @indikativ_praesens_du + cut + @indikativ_praeteritum + cut + @zweites_partizip \
-      + cut + @right.to_s + cut + @wrong.to_s + cut + @time.to_s
+      + cut + @right.to_s + cut + @wrong.to_s + cut + @time.to_s + cut + @chinese
   end
 
   def get_from_s!(str)
@@ -37,6 +40,8 @@ class Verben  # verbs
     @zweites_partizip = verben_s[3]
     @right = verben_s[4].to_i
     @wrong = verben_s[5].to_i
+    @time = verben_s[6]
+    @chinese = verben_s[7]
     self
   end
 
@@ -69,6 +74,10 @@ class Verben  # verbs
 
   def zweites_partizip
     @zweites_partizip
+  end
+
+  def chinese
+    @chinese
   end
 
   def right

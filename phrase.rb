@@ -114,6 +114,10 @@ class String
     (self.length < 8) ? self + "\t\t" : self + "\t" 
   end
 
+  def color( background = 0, front = 7 )    # "\e[40;37m" == grey background, white front by default
+    "\e[4#{background};3#{front}m" + self
+  end
+
   def black
     "\e[30m" + self
   end
@@ -178,4 +182,5 @@ class String
     "\e[47m" + self
   end
 end
+
 

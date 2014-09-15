@@ -1,7 +1,7 @@
 class Control 
 
   def continue?
-    puts "continue?".red + "".grey
+    puts "continue?".red + @default_color
     gets
   end
 
@@ -18,6 +18,8 @@ class Control
     # OPTIMIZE if a packed program del the next line
     @filename = "wordlist.txt"
     readfile
+    @default_color = "".color(6, 0)
+    puts @default_color
   end
 
   def readfile
@@ -103,15 +105,15 @@ class Control
     counter=0
     @@all_word.each do |verben|
       out_put=counter.to_s + "\t" + verben.to_s
-      (counter % 2 == 1 ) ? ( puts out_put.green ) : ( puts out_put.yellow)
+      (counter % 2 == 1 ) ? ( puts out_put.color(6, 3) ) : ( puts out_put.color(6, 4))
       counter += 1
+      puts @default_color
     end
-    puts "".grey
     continue?
   end
 
   def search_by_num(num)
-    @@all_word[num] or puts "There is no word by num" + "#{num}".yellow + "".grey
+    @@all_word[num] or puts "There is no word by num" + "#{num}".yellow + @default_color
   end
 
   def look_back
@@ -119,7 +121,7 @@ class Control
       clear
       verben = search_by_num(num)
       break if verben == nil
-      puts verben.infintiv.purple + "".grey
+      puts verben.infintiv.purple + @default_color
       answer = verben.clone
       answer.word_change!
       puts verben.to_s.blue
@@ -127,8 +129,8 @@ class Control
       right_answer = verben.infintiv.long_tab.blue
       resault = 
         if answer.indikativ_praesens_du == verben.indikativ_praesens_du
-          out_put += answer.indikativ_praesens_du.long_tab.green
-          right_answer += verben.indikativ_praesens_du.long_tab.green
+          out_put += answer.indikativ_praesens_du.long_tab.blue
+          right_answer += verben.indikativ_praesens_du.long_tab.blue
           verben.right
           1
         else
@@ -139,8 +141,8 @@ class Control
         end
       resault +=
         if answer.indikativ_praeteritum == verben.indikativ_praeteritum
-          out_put += answer.indikativ_praeteritum.long_tab.green
-          right_answer += verben.indikativ_praeteritum.long_tab.green
+          out_put += answer.indikativ_praeteritum.long_tab.blue
+          right_answer += verben.indikativ_praeteritum.long_tab.blue
           verben.right
           1
         else
@@ -151,8 +153,8 @@ class Control
         end
       resault +=
         if answer.zweites_partizip == verben.zweites_partizip
-          out_put += answer.zweites_partizip.green
-          right_answer += verben.zweites_partizip.green
+          out_put += answer.zweites_partizip.blue
+          right_answer += verben.zweites_partizip.blue
           verben.right
           1
         else
@@ -161,8 +163,8 @@ class Control
           verben.wrong
           0
         end
-      puts out_put + "".grey
-      puts right_answer + "".grey
+      puts out_put + @default_color
+      puts right_answer + @default_color
       verben.change_time! if resault == 3
       next_chose = continue?.chomp    # FIXME dont know weather ok
       case next_chose

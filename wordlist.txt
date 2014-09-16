@@ -33,3 +33,11 @@ binden&bindest&bandest&gebunden&15&10&2014-09-16 20:07:39 +0000&绑
 bergen&birgst&bargst&geborgen&18&7&2014-09-16 20:14:45 +0000&营救
 befehlen&befiehlst&befahlst&befohlen&47&23&2014-09-16 20:15:31 +0000&下令
 beginnen&beginnst&begannst&begonnen&32&5&2014-09-16 20:15:41 +0000&开始
+geben&gibst&gabst&gegeben&0&1&2014-09-16 21:05:09 +0000&给
+gedeihen&gedeihst&gediehst&gediehen&0&1&2014-09-16 21:05:39 +0000&茁壮成长
+gehen&gehst&gingst&gagangen&0&1&2014-09-16 21:06:05 +0000&走
+gelten&giltst&galtest&gegolten&0&1&2014-09-16 21:06:34 +0000&有效
+genesen&genest&genasest&genesen&0&1&2014-09-16 21:06:58 +0000&痊愈
+gewinnen&gewinnst&gewannst&gewonnen&0&1&2014-09-16 21:09:02 +0000&获胜
+gießen&gießt&gossest&gegossen&0&1&2014-09-16 21:09:23 +0000&倒，灌
+genießen&genießt&genossest&genossen&0&1&2014-09-16 21:10:53 +0000&享受

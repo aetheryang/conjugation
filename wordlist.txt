@@ -23,3 +23,13 @@ essen&isst&aßest&gegessen&0&1&2014-09-16 11:09:32 +0000&吃
 fahren&fährst&fuhrst&gefahren&0&1&2014-09-16 11:09:56 +0000&乘车
 fallen&fällst&fielst&gefallen&0&1&2014-09-16 11:10:47 +0000&落下
 fangen&fängst&fingst&gefangen&0&1&2014-09-16 11:11:11 +0000&抓捕
+fechten&fichtst&fochtest&gefochten&0&1&2014-09-16 11:18:02 +0000&击剑
+finden&findest&fandest&gefunden&0&1&2014-09-16 11:18:32 +0000&找到
+flechten&flichtet&flochtest&geflochten&0&1&2014-09-16 11:19:03 +0000&织
+fliegen&fliegst&flogst&geflogen&0&1&2014-09-16 11:19:37 +0000&飞
+fliehen&fliehst&flohst&geflohen&0&1&2014-09-16 11:20:14 +0000&逃跑
+fließen&fließt&flossest&geflossen&0&1&2014-09-16 11:20:41 +0000&流
+frieren&frierst&frorst&gefroren&0&1&2014-09-16 11:21:43 +0000&挨冻
+gären&gärst&gärtest&gegärt&0&1&2014-09-16 11:23:43 +0000&发酵
+gebären&gebärst&gebarst&geboren&0&1&2014-09-16 11:24:31 +0000&生育
+fressen&frisst&fraßest&gefressen&0&1&2014-09-16 11:24:56 +0000&（动物）吃

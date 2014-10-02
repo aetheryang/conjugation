@@ -34,8 +34,10 @@ class Control
   end
 
   def run
-    chose_list
-    make_chose
+    loop do
+      chose_list
+      make_chose
+    end
   end
 
   def chose_list

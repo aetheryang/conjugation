@@ -7,8 +7,8 @@
 #
 require_relative "phrase.rb"
 require_relative "control.rb"
-
+# Control.new do
+#   self.run
+# end
 app = Control.new
-loop do
-  app.run
-end
+app.run

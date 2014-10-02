@@ -9,6 +9,7 @@ class Verben  # verbs
     @time = Time.now
     puts "Please input the Chinese meaning"
     @chinese = gets.chomp
+    puts self
   end
 
   def change_time!

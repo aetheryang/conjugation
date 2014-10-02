@@ -70,7 +70,7 @@ class Control
     when "4"  # show by num
       puts 'Please input the num of the word'
       verben = search_by_num(gets.chomp.to_i)
-      puts num.to_s + "\t" + verben.to_s if verben
+      puts num.to_s + "\t" + verben if verben
       continue?
     when "5"  # look back
       look_back
@@ -89,7 +89,7 @@ class Control
   def word_delete(num)
     if @@all_word[num]
       puts "going to delete the blow word, are you sure? (y/n)"
-      puts num.to_s + "\t" + @@all_word[num].to_s   # OPTIMIZE maybe .to_s is not need
+      puts num.to_s + "\t" + @@all_word[num]
       if ['y', 'Y'].include?(gets.chomp)
         @@all_word.delete_at(num)
         puts 'Done!'
@@ -126,7 +126,7 @@ class Control
       puts verben.infintiv.purple + @default_color
       answer = verben.clone
       answer.word_change!
-      puts verben.to_s.blue
+      puts verben.blue
       out_put = verben.infintiv.long_tab.blue
       right_answer = verben.infintiv.long_tab.blue
       resault = 
@@ -168,7 +168,7 @@ class Control
       puts out_put + @default_color
       puts right_answer + @default_color
       verben.change_time! if resault == 3
-      next_chose = continue?.chomp    # FIXME dont know weather ok
+      next_chose = continue?.chomp
       case next_chose
       when "delete" then 
         word_delete(num)

@@ -61,6 +61,7 @@ class Control
       verben.word_change!
       verben.init_data!
       @@all_word << verben
+      continue?
     when "2"  # delete
       puts 'Please input the num of the word to delete!'
       num = gets.chomp.to_i
@@ -70,7 +71,7 @@ class Control
     when "4"  # show by num
       puts 'Please input the num of the word'
       verben = search_by_num(gets.chomp.to_i)
-      puts num.to_s + "\t" + verben if verben
+      puts num.to_s + "\t" + verben.to_s if verben
       continue?
     when "5"  # look back
       look_back
@@ -89,7 +90,7 @@ class Control
   def word_delete(num)
     if @@all_word[num]
       puts "going to delete the blow word, are you sure? (y/n)"
-      puts num.to_s + "\t" + @@all_word[num]
+      puts num.to_s + "\t" + @@all_word[num].to_s
       if ['y', 'Y'].include?(gets.chomp)
         @@all_word.delete_at(num)
         puts 'Done!'
